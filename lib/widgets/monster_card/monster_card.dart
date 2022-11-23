@@ -3,18 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yugioh_card_maker/models/yugioh_card.dart';
 import 'package:yugioh_card_maker/providers/card_provider.dart';
+import 'package:yugioh_card_maker/widgets/card_elements/atk.dart';
 import 'package:yugioh_card_maker/widgets/card_elements/card_attribute.dart';
 import 'package:yugioh_card_maker/widgets/card_elements/card_description.dart';
+import 'package:yugioh_card_maker/widgets/card_elements/creator_name.dart';
 
 import '../card_elements/card_image.dart';
 import '../card_elements/card_name.dart';
+import '../card_elements/def.dart';
 import '../card_elements/monster_level.dart';
 import '../card_elements/monster_type.dart';
 
 class MonsterCard extends StatefulWidget {
-  double width;
-  double height;
-  MonsterCard({Key? key, required this.width, required this.height})
+  final double width;
+  final double height;
+  const MonsterCard({Key? key, required this.width, required this.height})
       : super(key: key);
 
   @override
@@ -26,6 +29,7 @@ class _MonsterCardState extends State<MonsterCard> {
   Widget build(BuildContext context) {
     CardProvider cardProvider = Provider.of<CardProvider>(context);
     YugiohCard yugiohCard = cardProvider.cardInMakerScreen;
+
     return Stack(children: [
       //Card Image
       Positioned(
@@ -62,16 +66,45 @@ class _MonsterCardState extends State<MonsterCard> {
           count: yugiohCard.level!,
         ),
       ),
+      //Monster Type
       Positioned(
           top: widget.width * 1.09,
           left: widget.width * 0.078,
           child: MonsterType(
               width: widget.width * 0.844, height: widget.width * 0.06)),
+      //Card description
       Positioned(
           top: widget.width * 1.13,
           left: widget.width * 0.078,
           child: CardDescription(
-              width: widget.width * 0.844, height: widget.width * 0.2)),
+              width: widget.width * 0.857, height: widget.width * 0.2)),
+      //Card ATK
+      Positioned(
+        top: widget.width*1.331,
+        left: widget.width*0.625,
+        child: Atk(
+          width: widget.width * 0.1,
+          height: widget.width * 0.035,
+        ),
+      ),
+      //Card DEF
+      Positioned(
+        top: widget.width*1.331,
+        left: widget.width*0.83,
+        child: Def(
+          width: widget.width * 0.1,
+          height: widget.width * 0.035,
+        ),
+      ),
+      //Creator Name
+      Positioned(
+        top: widget.width*1.386,
+        left: widget.width*0.5,
+        child: CreatorName(
+          width: widget.width * 0.43,
+          height: widget.width * 0.035,
+        ),
+      )
     ]);
   }
 }

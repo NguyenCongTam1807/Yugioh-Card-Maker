@@ -13,7 +13,17 @@ final TextStyle kMonsterTypeStyle = TextStyle(
   fontFamily: 'StoneSerifSmallCapsBold',
 );
 
-final kCardDescStyle = TextStyle(
+final TextStyle kCardDescStyle = TextStyle(
   fontSize: 24.5.sp,
   fontFamily: 'Matrix',
+);
+
+final TextStyle kAtkDefStyle = TextStyle(
+  fontSize: 26.8.sp,
+  fontFamily: 'MatrixBoldSmallCaps',
+);
+
+final TextStyle kAuthorNameStyle = TextStyle(
+    fontSize: 26.3.sp,
+    fontFamily: 'MatrixSmallCaps'
 );

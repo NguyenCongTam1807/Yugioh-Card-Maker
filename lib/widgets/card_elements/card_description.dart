@@ -28,8 +28,8 @@ class _CardDescriptionState extends State<CardDescription> {
   Widget build(BuildContext context) {
     CardProvider cardProvider = Provider.of<CardProvider>(context);
     YugiohCard currentCard = cardProvider.cardInMakerScreen;
-    cardDescController.value = const TextEditingValue(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Maurisvolutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purusdui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu adlitora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifenddiam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.");
-    return Container(
+    cardDescController.value = TextEditingValue(text: currentCard.description);
+      return Container(
       padding: EdgeInsets.zero,
       width: widget.width,
       height: widget.height,

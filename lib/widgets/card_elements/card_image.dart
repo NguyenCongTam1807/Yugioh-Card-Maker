@@ -5,12 +5,18 @@ import 'package:yugioh_card_maker/models/yugioh_card.dart';
 import '../../providers/card_provider.dart';
 
 class CardImage extends StatefulWidget {
-  double size;
-  CardImage({Key? key, required this.size}) : super(key: key);
+  final double size;
+  final ValueNotifier<Matrix4>? notifier;
+  CardImage({Key? key, required this.size, this.notifier}) : super(key: key);
 
   @override
   State<CardImage> createState() => _CardImageState();
 }
+
+ValueNotifier<Matrix4> notifier = ValueNotifier(Matrix4.identity());
+ValueNotifier<Matrix4> notifier1 = ValueNotifier(Matrix4.identity());
+ValueNotifier<Matrix4> notifier2 = ValueNotifier(Matrix4.identity());
+ValueNotifier<Matrix4> notifier3 = ValueNotifier(Matrix4.identity());
 
 class _CardImageState extends State<CardImage> {
   @override

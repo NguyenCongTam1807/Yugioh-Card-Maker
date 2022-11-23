@@ -56,21 +56,25 @@ class _MyHomePageState extends State<MyHomePage> {
             AppBarButton(
               icon: Icons.save,
               text: 'Save',
-              onPressed: () {},
+              onPressed: () => saveImage,
             ),
             AppBarButton(
               icon: Icons.share,
               text: 'Share',
-              onPressed: () {},
+              onPressed: () => saveImage,
             ),
           ],
         ),
         body:
-            CardMakerScreen(),
+            const CardMakerScreen(),
         //resizeToAvoidBottomInset: false,
       ),
     );
   }
+
+  void saveImage() {}
+
+  void shareImage() {}
 }
 
 class AppBarButton extends StatelessWidget {
@@ -78,10 +82,11 @@ class AppBarButton extends StatelessWidget {
 
   final IconData icon;
   final String text;
-  final Function onPressed;
+  final void Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onPressed,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Column(
@@ -92,7 +97,6 @@ class AppBarButton extends StatelessWidget {
           ],
         ),
       ),
-      onTap: () => onPressed,
     );
   }
 }

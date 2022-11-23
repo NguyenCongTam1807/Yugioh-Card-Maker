@@ -33,8 +33,8 @@ class YugiohCard {
   late String imagePath;
   late String monsterType;
   late String description;
-  late int atk;
-  late int def;
+  late String atk;
+  late String def;
   late String creatorName;
   late CardType cardType;
   int? level;
@@ -46,8 +46,8 @@ class YugiohCard {
     this.imagePath = 'assets/images/loading1.jpg',
     this.monsterType = 'Dragon',
     this.description = 'Card description',
-    this.atk = 3000,
-    this.def = 2500,
+    this.atk = "3000",
+    this.def = "2500",
     this.creatorName = 'YOUR NAME',
     this.cardType = CardType.normal,
     this.level,

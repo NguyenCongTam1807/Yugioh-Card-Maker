@@ -22,8 +22,6 @@ class _CardMakerScreenState extends State<CardMakerScreen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().setSize(context);
-    print(
-        "SizeConfig.cardWidth ${SizeConfig.cardWidth} ${SizeConfig.cardHeight}");
     CardProvider cardProvider = Provider.of<CardProvider>(context);
     YugiohCard currentCard = cardProvider.cardInMakerScreen;
     double cardWidth = SizeConfig.cardWidth;

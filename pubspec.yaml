@@ -93,6 +93,9 @@ flutter:
     - family: MatrixBold
       fonts:
         - asset: fonts/matrixboldfractions_bold.ttf
+    - family: MatrixBoldSmallCaps
+      fonts:
+        - asset: fonts/matrixboldsmallcaps.otf
     - family: StoneSerif
       fonts:
         - asset: fonts/STONESERIF.OTF

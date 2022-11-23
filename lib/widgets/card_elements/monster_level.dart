@@ -2,20 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:yugioh_card_maker/const/size_config.dart';
 
-class MonsterLevel extends StatefulWidget {
-  int count;
-  MonsterLevel({Key? key, required this.count}) : super(key: key);
+class MonsterLevel extends StatelessWidget {
+  final int count;
+  const MonsterLevel({Key? key, required this.count}) : super(key: key);
 
-  @override
-  State<MonsterLevel> createState() => _MonsterLevelState();
-}
-
-class _MonsterLevelState extends State<MonsterLevel> {
   @override
   Widget build(BuildContext context) {
     double cardWidth = SizeConfig.cardWidth;
     List<LevelStar> stars = List.generate(
-        widget.count,
+        count,
         (index) => LevelStar(
               size: cardWidth * 0.065,
             ));

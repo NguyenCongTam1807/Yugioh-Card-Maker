@@ -39,20 +39,20 @@ class CardProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void setCardAtk(int atk) {
+  void setCardAtk(String atk) {
     _cardInMakerScreen.atk = atk;
     notifyListeners();
   }
 
-  void setCardDef(int def) {
+  void setCardDef(String def) {
     _cardInMakerScreen.def = def;
     notifyListeners();
   }
-  //
-  // void setCardTheme(CardType type) {
-  //   _cardInMakerScreen.cardType = type;
-  //   notifyListeners();
-  // }
+
+  void setCreatorName(String name) {
+    _cardInMakerScreen.creatorName = name.toUpperCase();
+    notifyListeners();
+  }
   //
   // void setCardTheme(CardType type) {
   //   _cardInMakerScreen.cardType = type;
