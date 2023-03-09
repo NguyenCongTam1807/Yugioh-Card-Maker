@@ -34,6 +34,11 @@ class CardProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  void setCardLevel(int level){
+    _cardInMakerScreen.level = level;
+    notifyListeners();
+  }
+
   void setCardDescription(String description) {
     _cardInMakerScreen.description = description;
     notifyListeners();

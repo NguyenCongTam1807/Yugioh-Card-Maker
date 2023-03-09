@@ -27,7 +27,7 @@ class MonsterCard extends StatefulWidget {
 class _MonsterCardState extends State<MonsterCard> {
   @override
   Widget build(BuildContext context) {
-    CardProvider cardProvider = Provider.of<CardProvider>(context);
+    CardProvider cardProvider = Provider.of<CardProvider>(context, listen: false);
     YugiohCard yugiohCard = cardProvider.cardInMakerScreen;
 
     return Stack(children: [
@@ -62,9 +62,7 @@ class _MonsterCardState extends State<MonsterCard> {
       //Monster Level
       Positioned(
         top: 0.181 * widget.width,
-        child: MonsterLevel(
-          count: yugiohCard.level!,
-        ),
+        child: const MonsterLevel(),
       ),
       //Monster Type
       Positioned(

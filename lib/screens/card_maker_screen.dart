@@ -22,21 +22,21 @@ class _CardMakerScreenState extends State<CardMakerScreen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().setSize(context);
-    CardProvider cardProvider = Provider.of<CardProvider>(context);
+    CardProvider cardProvider = Provider.of<CardProvider>(context, listen: false);
     YugiohCard currentCard = cardProvider.cardInMakerScreen;
     double cardWidth = SizeConfig.cardWidth;
     double cardHeight = SizeConfig.cardHeight;
     return Center(
         child: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
       width: cardWidth,
       height: cardHeight,
       child: Stack(children: [
           //Card Class By Card Type
           currentCard.cardType== CardType.spell?
-              SpellCard():
+              const SpellCard():
           currentCard.cardType== CardType.trap?
-              TrapCard():
+              const TrapCard():
           MonsterCard(
             width: cardWidth,
             height: cardHeight,

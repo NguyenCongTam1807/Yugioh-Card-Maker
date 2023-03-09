@@ -7,9 +7,9 @@ import '../../models/yugioh_card.dart';
 
 //Actually Monster Type and Abilities (if any)
 class MonsterType extends StatefulWidget {
-  double width;
-  double height;
-  MonsterType({Key? key, required this.width, required this.height})
+  final double width;
+  final double height;
+  const MonsterType({Key? key, required this.width, required this.height})
       : super(key: key);
 
   @override

@@ -1,6 +1,4 @@
-import 'dart:ffi';
 
-import 'package:flutter/material.dart';
 
 enum CardAttribute { dark, light, earth, wind, fire, water, divine, spell, trap }
 
